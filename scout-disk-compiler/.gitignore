@@ -1,0 +1,3 @@
+# ignore build output folders
+./assets/
+./workspace/
