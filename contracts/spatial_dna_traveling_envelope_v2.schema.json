@@ -1,0 +1,96 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "MasterTravelingEnvelope_v2",
+  "description": "Master traveling envelope schema for Spatial DNA Pipeline (Z through C5 with stationary B-sidecar attestation)",
+  "version": "2.0.0",
+  "type": "object",
+  "required": ["envelope_version", "Z_state", "audit_trail"],
+  "properties": {
+    "envelope_version": {
+      "type": "string",
+      "enum": ["2.0.0"]
+    },
+    "Z_state": {
+      "type": "object",
+      "required": ["run_id", "candidate_id", "target_id", "pipeline_version", "current_stage", "status"],
+      "properties": {
+        "run_id": { "type": "string" },
+        "candidate_id": { "type": "string" },
+        "target_id": { "type": "string" },
+        "pipeline_version": { "type": "string" },
+        "current_stage": { "type": "string" },
+        "status": { "type": "string" },
+        "run_policy": { "type": "object" },
+        "created_at": { "type": "string" }
+      }
+    },
+    "A_scout": {
+      "type": ["object", "null"],
+      "properties": {
+        "target_entity": {
+          "type": "object",
+          "required": ["company_name", "job_title", "destination_context"],
+          "properties": {
+            "company_name": { "type": "string" },
+            "job_title": { "type": "string" },
+            "location": { "type": "string" },
+            "destination_context": { "type": "string" }
+          }
+        },
+        "requirements_taxonomy": {
+          "type": "object",
+          "properties": {
+            "hard_requirements": { "type": "array", "items": { "type": "string" } },
+            "soft_requirements": { "type": "array", "items": { "type": "string" } },
+            "keyword_lexicon": { "type": "array", "items": { "type": "string" } }
+          }
+        },
+        "original_content_sha256": { "type": "string" },
+        "source_url": { "type": "string" }
+      }
+    },
+    "B_sdna": {
+      "type": ["object", "null"],
+      "properties": {
+        "competency_tree": { "type": "object" },
+        "b4_ledger": { "type": "object" },
+        "b5_projection": {
+          "type": "object",
+          "properties": {
+            "prism_intro_evaluation": { "type": "string" },
+            "owner_prism": { "type": "string" },
+            "projection_posture": { "type": "string" },
+            "geometric_directives": { "type": "object" },
+            "enhancement_metrics": { "type": "object" }
+          }
+        },
+        "B_sidecar_attestation": {
+          "$ref": "sidecar_attestation.schema.json"
+        }
+      }
+    },
+    "C_factory": {
+      "type": ["object", "null"],
+      "properties": {
+        "C1_docket": { "type": ["object", "null"] },
+        "C2_claims": { "type": ["object", "null"] },
+        "C3_model": { "type": ["object", "null"] },
+        "C4_layout": { "type": ["object", "null"] },
+        "C5_artifact": { "type": ["object", "null"] }
+      }
+    },
+    "audit_trail": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["stage", "event", "timestamp"],
+        "properties": {
+          "stage": { "type": "string" },
+          "event": { "type": "string" },
+          "timestamp": { "type": "string" },
+          "metadata": { "type": "object" }
+        }
+      }
+    }
+  }
+}
