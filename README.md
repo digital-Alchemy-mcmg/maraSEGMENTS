@@ -1,95 +1,45 @@
-# MARA Segments — Execution Test Repository
+# Spatial DNA Pipeline — Segment B Harness
 
-This repository is a **segment-isolated execution test environment**.
+This branch contains the isolated Stage B execution harness: B1 → B2 → B3 → B4 → B5 → T06 → sidecar termination → C1 handoff.
 
-The `main` branch is the architecture and navigation plane. It does **not** contain the active executable implementation of any pipeline segment.
+## Runtime ingress
 
-Each executable segment lives on its own branch and is tested independently before any later integration work.
+There are no embedded candidates, targets, automatic fixtures, or fallback values. Runtime requires exactly three operator-supplied inputs:
 
-## Repository Topology
+1. Stage A traveling envelope JSON.
+2. Stage A stationary sidecar JSON.
+3. Candidate SDNA YAML selected by the operator.
 
-```mermaid
-flowchart TD
-    M["main<br/>Architecture / Documentation<br/>No Active Segment Runtime"]
+CLI:
 
-    A["segment/A<br/>Segment A — Standalone Test Build"]
-    N["segment/&lt;ID&gt;<br/>Future Segment — Standalone Test Build"]
-
-    M --> A
-    M --> N
-
-    A -. "test independently" .-> TA["Execution-Test Runtime"]
-    N -. "test independently" .-> TN["Execution-Test Runtime"]
-
-    TA --> RA["Segment Receipt / Evidence"]
-    TN --> RN["Segment Receipt / Evidence"]
+```bash
+python run_stage_b.py --envelope /path/stage_a_envelope.json --sidecar /path/stage_a_sidecar.json --candidate /path/candidate.sdna.yaml --output /path/stage_b_handoff.json
 ```
 
-## Branch Rule
+Browser/Codespaces test surface:
 
-Every segment branch is created from `main`.
-
-```text
-main
-├── segment/A
-├── segment/<next-segment>
-├── segment/<next-segment>
-└── ...
+```bash
+python dev_server.py
 ```
 
-A segment branch contains only the implementation and test material required for that segment's standalone execution test.
+Open forwarded port 8000 and paste the same three authoritative inputs.
 
-## Main Branch Responsibility
+## Ownership boundaries
 
-`main` contains:
+- B1 reads target source and creates temporary target tags only.
+- B2 reads B1 tags and freezes the competency tree.
+- B3 has no sidecar parameter; it can read only the frozen B2 tree and CandidateVault.
+- B4 independently verifies B3-bound atom IDs/content against CandidateVault, records evidence ceilings and source trace, then purges temporary tags.
+- B5 sees only B4/B2 semantic state. It does not read candidate SDNA or sidecar and does not set page count, density, typography, or résumé layout.
+- T06 independently recomputes the source hash and verifies B5 → B4 → B3 → B2 lineage plus source spans where exact spans exist.
+- CandidateVault is unmounted after the B-cycle.
+- Sidecar termination proves application-level reference unreachability only. Python does not provide a verifiable guarantee of physical/kernel memory zeroization, so the receipt does not make that claim.
 
-- repository architecture;
-- pipeline/branch diagrams;
-- branch naming rules;
-- cross-segment test conventions;
-- navigation documentation.
+## Tests
 
-`main` does not contain:
-
-- the active Segment A runtime;
-- active Segment B/C runtime code;
-- merged multi-segment execution code;
-- production/full-pipeline runtime code.
-
-## Segment Branch Responsibility
-
-Each `segment/<ID>` branch owns:
-
-1. that segment's executable build;
-2. segment-local fixtures;
-3. segment-local tests;
-4. validation/fail-closed checks;
-5. execution receipts or test evidence;
-6. documentation specific to that segment.
-
-Changes to one segment must not silently modify another segment branch.
-
-## Test Flow
-
-```mermaid
-flowchart LR
-    SRC["main<br/>architecture baseline"]
-    BR["segment/<ID>"]
-    RUN["standalone execution test"]
-    PASS{"passes contract?"}
-    REC["receipt / evidence"]
-    FIX["patch same segment branch"]
-
-    SRC --> BR
-    BR --> RUN
-    RUN --> PASS
-    PASS -- yes --> REC
-    PASS -- no --> FIX
-    FIX --> RUN
+```bash
+python -m pip install -r requirements.txt
+python -m unittest discover -s tests -v
 ```
 
-## Current Segment
-
-`segment/A` is reserved for the Segment A standalone execution-test build.
-
-Its implementation is intentionally kept off `main`.
+Tests generate ephemeral values inside the test process; none are selectable by runtime execution.
