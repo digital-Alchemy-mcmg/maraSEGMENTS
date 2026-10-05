@@ -43,3 +43,7 @@ python -m unittest discover -s tests -v
 ```
 
 Tests generate ephemeral values inside the test process; none are selectable by runtime execution.
+
+## Audit provenance
+
+Audit lane: **GPT**. This branch is the GPT-audited Stage B baseline and is intentionally isolated from Jules' parallel work.
