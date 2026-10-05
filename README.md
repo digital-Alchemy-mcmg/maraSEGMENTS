@@ -1,44 +1,36 @@
-# Segment A — Standalone Execution Test
+# Segment A — Standalone YAML-First Execution Test
 
-This branch is the isolated execution-test branch for Segment A (Scout & Ingress).
+`segment/A` is the isolated Codespaces test branch for Segment A (A0–A11).
 
-## What happens in Codespaces
+Segment A now accepts the canonical SDNA **YAML directly** at A1. There is no production JSON wrapper, no built-in candidate, and no fabricated prominence value.
 
-The branch contains the supplied `STAGE_A_HARNESS.zip` plus a Codespaces bootstrap.
+A1 parses operator-supplied YAML. A2 validates the SDNA structure and recomputes its manifest hash before A3 will accept compiler/target input.
 
-When the Codespace is created, the bootstrap:
-1. extracts the supplied Stage A package;
-2. preserves the A0–A11 engine;
-3. removes the broken dependency on nonexistent sample JSON fixtures;
-4. installs a self-contained 5-test contract suite;
-5. adds a manual browser ingress where you paste the canonical SDNA JSON yourself;
-6. adds a second ingress for the Disk/Compiler package;
-7. leaves Segment A fail-closed: `SEALED_A` or `HALTED_A`.
+If the canonical SDNA does not contain a prominence reference, Segment A records `ABSENT_IN_CANONICAL_SDNA`; it does not manufacture one.
 
-## Run the tests
+## Codespaces
 
-```bash
-python3 -m unittest discover -s tests -v
-```
+Create a Codespace on `segment/A`. The devcontainer automatically:
 
-Expected: **5/5 PASS**.
+1. unpacks `STAGE_A_YAML_FIRST.zip`;
+2. installs PyYAML;
+3. runs the six Segment A contract tests.
 
-## Run the manual SDNA test surface
+Expected: **6/6 PASS**.
+
+Then run:
 
 ```bash
 python3 dev_server.py
 ```
 
-Open forwarded port **8000**.
+Open forwarded port `8000`.
 
-The first box is **A1 — Canonical SDNA Package JSON**. Paste your SDNA there. The second box is the compiler/target package. Execution does not proceed to target intake unless SDNA verification passes.
+- Left: **A1 — Canonical SDNA YAML**
+- Right: **A3 — Compiler / Target Package JSON**
+- Execute: **A0 → A11**
 
-## CLI
+Success: `SEALED_A`
+Failure: `HALTED_A`
 
-```bash
-python3 run_stage_a.py --sdna-package /path/to/sdna.json --compiler-package /path/to/compiler.json
-```
-
-## Vercel
-
-The unpacked test surface includes `index.html`, `api/segment_a.py`, and `vercel.json`, so the same manual-entry test can be used as a Vercel preview after the package is unpacked. Treat Vercel as a disposable execution surface; GitHub `segment/A` remains the source-of-truth test branch.
+The YAML-first runtime was locally verified against the supplied `CF-SDNA-EVERYTHING-1.0` document: candidate `CHRISTOPHER-FLOURNOY-001`, 132 evidence atoms, no prominence reference fabricated, and a valid compiler package reached `SEALED_A`.
