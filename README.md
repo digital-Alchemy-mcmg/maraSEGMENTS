@@ -93,3 +93,12 @@ flowchart LR
 `segment/A` is reserved for the Segment A standalone execution-test build.
 
 Its implementation is intentionally kept off `main`.
+
+
+## Segment C Layout Dossier
+
+The complete layout dossier for Segment C is registered at:
+
+- [NotebookLM Layout Dossier](docs/NOTEBOOKLM_LAYOUT_DOSSIER.md)
+
+The dossier is the authoritative source collection for the résumé layout family used by C3–C5. Repository-normalized audit material remains in `docs/BUILD_SPEC_VOL_2.md`.
