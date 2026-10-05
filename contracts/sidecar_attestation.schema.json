@@ -1,0 +1,24 @@
+{
+  "$schema":"http://json-schema.org/draft-07/schema#",
+  "title":"BSidecarAttestationTombstone",
+  "version":"2.0.0",
+  "type":"object",
+  "required":["sidecar_id","status","lifecycle_metrics","cryptographic_proofs","b5_trace_verification","destruction_verification"],
+  "properties":{
+    "sidecar_id":{"type":"string"},
+    "status":{"type":"string","enum":["TERMINATED_AND_VERIFIED","DESTROYED_UNVERIFIED_ABORT"]},
+    "lifecycle_metrics":{"type":"object","required":["created_at","tags_purged_at","destroyed_at"]},
+    "cryptographic_proofs":{"type":"object","required":["original_content_sha256","tag_layer_sha256","b2_frozen_tree_sha256","b4_lineage_ledger_sha256"]},
+    "b5_trace_verification":{"type":"object","required":["verifier_id","result","verified_walk","hash_matched","three_way_match","anchors_checked"]},
+    "destruction_verification":{
+      "type":"object",
+      "required":["method","owned_references_unreachable","physical_memory_zeroization_guaranteed","scope"],
+      "properties":{
+        "method":{"type":"string","enum":["APPLICATION_REFERENCE_PURGE"]},
+        "owned_references_unreachable":{"type":"boolean","const":true},
+        "physical_memory_zeroization_guaranteed":{"type":"boolean","const":false},
+        "scope":{"type":"string"}
+      }
+    }
+  }
+}
