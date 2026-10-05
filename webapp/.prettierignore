@@ -1,0 +1,7 @@
+node_modules
+dist
+build
+coverage
+index.d.ts
+.prettierrc
+vite.config.ts.*

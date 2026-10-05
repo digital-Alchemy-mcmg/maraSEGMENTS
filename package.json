@@ -1,0 +1,19 @@
+{
+    "name": "as-app",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "start": "npm run --prefix webapp start:dev > /dev/null 2>&1 &",
+        "stop:servers": "kill -9 $(lsof -t -i:3029 2>/dev/null) || true",
+        "prettier": "npm run --prefix webapp prettier",
+        "build": "npm run --prefix webapp build"
+    },
+    "workspaces": [
+        "webapp"
+    ],
+    "overrides": {
+        "dompurify": "3.3.3",
+        "esbuild": "0.25.12",
+        "vite": "^6.4.1"
+    }
+}
