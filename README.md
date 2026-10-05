@@ -47,3 +47,7 @@ Tests generate ephemeral values inside the test process; none are selectable by 
 ## Audit provenance
 
 Audit lane: **GPT**. This branch is the GPT-audited Stage B baseline and is intentionally isolated from Jules' parallel work.
+
+## Canonical SDNA contract
+
+Spatial DNA is **YAML only** across the pipeline. Segment A is the real raw-SDNA ingress. Segment B asks for the same YAML only because this branch is a standalone execution test; that input simulates the already-mounted candidate vault that the compiled A→B pipeline will carry forward. Segment B does not define a JSON SDNA format. Segment C never reopens SDNA and consumes only the sealed Stage B handoff.
