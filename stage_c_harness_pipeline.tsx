@@ -49,7 +49,7 @@ export default function StageCHarness({ initialEnvelope, executeStage, executeAl
 
   return <div className="min-h-screen bg-slate-950 text-slate-300 p-6">
     <header className="flex justify-between border-b border-slate-800 pb-4">
-      <div><h1 className="text-xl font-bold">STAGE C HARNESS // C1–C5</h1><p className="text-xs text-slate-500">Actual B5 handoff required. No mock runtime state exists.</p></div>
+      <div><h1 className="text-xl font-bold">STAGE C HARNESS // C1–C5</h1><p className="text-xs text-slate-500">Actual B5 handoff required. No default runtime state exists.</p></div>
       <div className="flex gap-2">
         <button onClick={step} disabled={running || !envelope || stage >= 5}><Play size={16}/>Step</button>
         <button onClick={run} disabled={running || !envelope || stage >= 5}><FastForward size={16}/>Run</button>
