@@ -1,0 +1,255 @@
+// ═══════════════════════════════════════════════════════════════
+// Scout Taxonomy Knowledgebase — NAICS & SOC Lookups
+// Merged + deduplicated from both Scout Taxonomy spreadsheets.
+// Used by DiskBuilder for searchable auto-populate.
+// ═══════════════════════════════════════════════════════════════
+
+export interface NaicsEntry {
+  code: string;
+  title: string;
+  sector: string;
+  keywords: string;
+}
+
+export interface SocEntry {
+  code: string;
+  title: string;
+  majorGroup: string;
+  broadCategory: string;
+}
+
+// ── NAICS Lookup (merged, deduplicated by code) ──
+export const NAICS_LOOKUP: NaicsEntry[] = [
+  { code: '236115', title: 'New Single-Family Housing Construction', sector: '23 - Construction', keywords: 'home builder, residential construction, single-family home builder, general contractor, residential building, development' },
+  { code: '236220', title: 'Commercial and Institutional Building Construction', sector: '23 - Construction', keywords: 'commercial construction, building contractor, institutional construction, project builder, commercial offices, schools, hospitals' },
+  { code: '238110', title: 'Foundation, Structure, and Building Exterior Contractors', sector: '23 - Construction', keywords: 'structural steel, framing, foundational work' },
+  { code: '238910', title: 'Foundation and Building Exterior Contractors', sector: '23 - Construction', keywords: 'exterior envelope, cladding, roofing' },
+  { code: '311999', title: 'All Other Miscellaneous Food Manufacturing', sector: '31-33 - Manufacturing', keywords: 'food processing, packaged food, food production, culinary manufacturing' },
+  { code: '325412', title: 'Pharmaceutical Preparation Manufacturing', sector: '31-33 - Manufacturing', keywords: 'pharma, drug manufacturing, biotechnology, pharmaceuticals, medicine production' },
+  { code: '332911', title: 'Metal Crown and Closure Manufacturing', sector: '31-33 - Manufacturing', keywords: 'metal packaging, closures, can production' },
+  { code: '334410', title: 'Semiconductor and Other Electronic Component Manufacturing', sector: '31-33 - Manufacturing', keywords: 'semiconductor, chips, microelectronics, circuit boards, microchips, electronics manufacturing' },
+  { code: '335311', title: 'Navigational Instrument Manufacturing', sector: '31-33 - Manufacturing', keywords: 'navigation systems, GPS, avionics' },
+  { code: '336111', title: 'Automobile Manufacturing', sector: '31-33 - Manufacturing', keywords: 'automotive, car manufacturing, auto assembly, vehicle production, OEM, motor vehicles' },
+  { code: '336311', title: 'Motor Vehicle Manufacturing', sector: '31-33 - Manufacturing', keywords: 'auto manufacturing, EV production, supply chain' },
+  { code: '336411', title: 'Aircraft Manufacturing', sector: '31-33 - Manufacturing', keywords: 'aircraft production, aerospace, composite materials' },
+  { code: '336511', title: 'Railroad Rolling Stock Manufacturing', sector: '31-33 - Manufacturing', keywords: 'railcars, locomotives, rail equipment' },
+  { code: '423420', title: 'Medical Equipment and Supplies Merchant Wholesalers', sector: '42 - Wholesale Trade', keywords: 'medtech, diagnostics, hospital supplies' },
+  { code: '423450', title: 'Computer and Peripheral Equipment Merchant Wholesalers', sector: '42 - Wholesale Trade', keywords: 'tech wholesale, software distribution, IT resale' },
+  { code: '423610', title: 'Electrical and Electronic Goods Merchant Wholesalers', sector: '42 - Wholesale Trade', keywords: 'electrical components, wiring, electronic supplies' },
+  { code: '423830', title: 'Industrial Machinery and Equipment Merchant Wholesalers', sector: '42 - Wholesale Trade', keywords: 'machinery, manufacturing equipment, industrial supplies' },
+  { code: '441110', title: 'New Car Dealers', sector: '44-45 - Retail Trade', keywords: 'car dealership, auto dealership, vehicle sales, showroom' },
+  { code: '445110', title: 'Supermarkets and Other Grocery Retailers', sector: '44-45 - Retail Trade', keywords: 'grocery, supermarket, food market, bodega, grocery store, fresh food' },
+  { code: '451111', title: 'Online Retail (Electronic Shopping)', sector: '44-45 - Retail Trade', keywords: 'e-commerce, direct-to-consumer, digital retail' },
+  { code: '452111', title: 'Sporting Goods Stores', sector: '44-45 - Retail Trade', keywords: 'sporting equipment, apparel, specialty retail' },
+  { code: '452210', title: 'Department Stores', sector: '44-45 - Retail Trade', keywords: 'department store, big-box, general merchandise, retail store' },
+  { code: '453220', title: 'Florist Stores', sector: '44-45 - Retail Trade', keywords: 'floral arrangements, plants, gift shop merchandise' },
+  { code: '481111', title: 'Scheduled Passenger Air Transportation', sector: '48-49 - Transportation and Warehousing', keywords: 'airline, passenger aviation, flight operations, air carrier' },
+  { code: '484121', title: 'General Freight Trucking, Long-Distance, Truckload', sector: '48-49 - Transportation and Warehousing', keywords: 'trucking, long-haul, freight, CDL, carrier, transport, logistics' },
+  { code: '486110', title: 'Pipeline Transportation of Crude Oil', sector: '48-49 - Transportation and Warehousing', keywords: 'pipeline transport, oil and gas logistics' },
+  { code: '488110', title: 'Air Transportation, Scheduled', sector: '48-49 - Transportation and Warehousing', keywords: 'passenger and cargo airlines, flight operations' },
+  { code: '492110', title: 'Couriers and Express Delivery Services', sector: '48-49 - Transportation and Warehousing', keywords: 'parcel delivery, courier, express mail, package shipping, last-mile delivery' },
+  { code: '493110', title: 'General Warehousing and Storage', sector: '48-49 - Transportation and Warehousing', keywords: 'warehouse, fulfillment center, storage, logistics hub, distribution center, supply chain, inventory management' },
+  { code: '511210', title: 'Software Publishers', sector: '51 - Information', keywords: 'software company, packaged software, enterprise software, SaaS, software products, licensing' },
+  { code: '511140', title: 'Television Broadcasting', sector: '51 - Information', keywords: 'TV broadcast, network programming, content creation' },
+  { code: '512110', title: 'Newspaper Publishers', sector: '51 - Information', keywords: 'print publishing, news distribution, journalism' },
+  { code: '512199', title: 'All Other Publishers', sector: '51 - Information', keywords: 'digital publishing, niche magazines, specialty print' },
+  { code: '515120', title: 'Record Production', sector: '51 - Information', keywords: 'music production, audio engineering, record labels' },
+  { code: '516120', title: 'Media Streaming Distribution Services', sector: '51 - Information', keywords: 'streaming services, OTT, video on demand, audio streaming, digital media' },
+  { code: '517311', title: 'Wireless Telecommunications Carriers (except Satellite)', sector: '51 - Information', keywords: 'wireless voice and data, mobile networks, 5G' },
+  { code: '517312', title: 'Wired Telecommunications Carriers', sector: '51 - Information', keywords: 'fiber optics, landline telecom, broadband' },
+  { code: '518210', title: 'Computing Infrastructure Providers, Data Processing, Web Hosting', sector: '51 - Information', keywords: 'cloud computing, data center, web hosting, SaaS infrastructure, compute provider, managed services' },
+  { code: '519130', title: 'Internet Publishing and Web Search Portals', sector: '51 - Information', keywords: 'web content, search engines, online advertising' },
+  { code: '522110', title: 'Commercial Banking', sector: '52 - Finance and Insurance', keywords: 'bank, commercial bank, retail banking, credit union, depository institution, loans, credit services' },
+  { code: '522291', title: 'Financial Transactions Processing and Clearinghouse', sector: '52 - Finance and Insurance', keywords: 'payment processing, clearing, settlement' },
+  { code: '523110', title: 'Investment Banking and Securities Dealing', sector: '52 - Finance and Insurance', keywords: 'investment banking, brokerage, capital markets, securities dealer, underwriting' },
+  { code: '523910', title: 'Miscellaneous Intermediation', sector: '52 - Finance and Insurance', keywords: 'brokerage, asset management, fintech platforms' },
+  { code: '524114', title: 'Direct Health and Medical Insurance Carriers', sector: '52 - Finance and Insurance', keywords: 'health insurance, medical underwriting, HMO, healthcare coverage, payer' },
+  { code: '531110', title: 'Lessors of Residential Buildings and Dwellings', sector: '53 - Real Estate', keywords: 'property management, apartment leasing, residential landlord, rental units' },
+  { code: '531120', title: 'Lessors of Nonresidential Buildings', sector: '53 - Real Estate', keywords: 'office space, commercial leasing' },
+  { code: '531210', title: 'Offices of Real Estate Agents and Brokers', sector: '53 - Real Estate', keywords: 'realtor, real estate brokerage, property broker, leasing agent' },
+  { code: '531311', title: 'Lessors of Residential Buildings, Operative Builders', sector: '53 - Real Estate', keywords: 'residential leasing, apartment development' },
+  { code: '532120', title: 'Lessors of Motor Vehicles', sector: '53 - Real Estate', keywords: 'car rental, fleet management' },
+  { code: '532411', title: 'General Rental Centers', sector: '53 - Real Estate', keywords: 'equipment rental, tool hire, event supplies' },
+  { code: '541110', title: 'Offices of Lawyers', sector: '54 - Professional Services', keywords: 'law firm, legal practice, attorneys, legal services, counsel' },
+  { code: '541211', title: 'Offices of Certified Public Accountants', sector: '54 - Professional Services', keywords: 'accounting firm, CPA, tax preparation, audit services, bookkeeping' },
+  { code: '541330', title: 'Engineering Services', sector: '54 - Professional Services', keywords: 'civil engineering, mechanical engineering, structural engineering, engineering consultancy' },
+  { code: '541511', title: 'Custom Computer Programming Services', sector: '54 - Professional Services', keywords: 'software development, custom programming, coding, IT services, web development, app development, systems integration, IT consulting' },
+  { code: '541512', title: 'Computer Systems Design Services', sector: '54 - Professional Services', keywords: 'systems architecture, IT infrastructure, network integration, systems engineering, facilities management, cloud ops, IT support' },
+  { code: '541611', title: 'Management Consulting Services', sector: '54 - Professional Services', keywords: 'business strategy, process improvement, operational excellence' },
+  { code: '541620', title: 'Environmental Consulting Services', sector: '54 - Professional Services', keywords: 'environmental consulting, sustainability, compliance' },
+  { code: '541711', title: 'Research and Development in Biotechnology', sector: '54 - Professional Services', keywords: 'biotech R&D, life sciences innovation, lab research' },
+  { code: '541810', title: 'Advertising Agencies', sector: '54 - Professional Services', keywords: 'ad agency, digital marketing, brand strategy, creative agency, media buying' },
+  { code: '561210', title: 'Facilities Support Services', sector: '56 - Administrative and Support', keywords: 'building maintenance, property management' },
+  { code: '561320', title: 'Temporary Help Services', sector: '56 - Administrative and Support', keywords: 'staffing agency, temp agency, contingent labor, contract staffing, recruiting, employment services, recruitment' },
+  { code: '561422', title: 'Telemarketing Bureaus and Other Contact Centers', sector: '56 - Administrative and Support', keywords: 'call center, contact center, customer support center, telemarketing, BPO' },
+  { code: '561611', title: 'Office Administrative Services', sector: '56 - Administrative and Support', keywords: 'office ops, document management, scheduling' },
+  { code: '561612', title: 'Security Guards and Patrol Services', sector: '56 - Administrative and Support', keywords: 'security guards, patrol, protective services, physical security, loss prevention' },
+  { code: '561720', title: 'Janitorial Services', sector: '56 - Administrative and Support', keywords: 'cleaning services, janitorial, custodial, commercial cleaning, facilities maintenance, hygiene' },
+  { code: '611110', title: 'Elementary and Secondary Schools', sector: '61 - Educational Services', keywords: 'K-12, public school, private school, elementary school, high school, academy' },
+  { code: '611210', title: 'Colleges, Universities, and Professional Schools', sector: '61 - Educational Services', keywords: 'higher education, university, college, professional school, academic institution, degree granting, research' },
+  { code: '611420', title: 'Computer Training', sector: '61 - Educational Services', keywords: 'coding bootcamp, technical training, IT certification, software training' },
+  { code: '611421', title: 'Technical and Trade Schools', sector: '61 - Educational Services', keywords: 'trade skills, technical certifications, workforce training' },
+  { code: '611511', title: 'Cosmetology and Barber Schools', sector: '61 - Educational Services', keywords: 'vocational beauty training, barbering certification' },
+  { code: '621111', title: 'Offices of Physicians (except Mental Health Specialists)', sector: '62 - Health Care', keywords: 'doctor office, physician clinic, outpatient clinic, medical practice, primary care' },
+  { code: '621210', title: 'Offices of Dentists', sector: '62 - Health Care', keywords: 'dental offices, oral health services' },
+  { code: '621310', title: 'Offices of Other Health Practitioners', sector: '62 - Health Care', keywords: 'chiropractors, optometrists, podiatrists' },
+  { code: '621411', title: 'Outpatient Care Centers', sector: '62 - Health Care', keywords: 'outpatient clinics, same-day surgery, diagnostics' },
+  { code: '621420', title: 'Outpatient Mental Health and Substance Abuse Centers', sector: '62 - Health Care', keywords: 'behavioral health, mental health clinic, substance abuse treatment, counseling center' },
+  { code: '621610', title: 'Home Health Care Services', sector: '62 - Health Care', keywords: 'home health, visiting nurse, home care, in-home care services' },
+  { code: '622110', title: 'General Medical and Surgical Hospitals', sector: '62 - Health Care', keywords: 'hospital, healthcare, medical center, surgical hospital, inpatient care, acute care, emergency services' },
+  { code: '623110', title: 'Nursing Care Facilities (Skilled Nursing Facilities)', sector: '62 - Health Care', keywords: 'nursing home, skilled nursing, convalescent home, eldercare, LTC facility' },
+  { code: '711211', title: 'Sports Teams and Clubs', sector: '71 - Arts, Entertainment, and Recreation', keywords: 'pro sports, athletic club, sports franchise, team operations' },
+  { code: '713940', title: 'Fitness and Recreational Sports Centers', sector: '71 - Arts, Entertainment, and Recreation', keywords: 'gym, fitness center, athletic facility, health club, workout center' },
+  { code: '721110', title: 'Hotels (except Casino Hotels) and Motels', sector: '72 - Accommodation and Food Services', keywords: 'hotel, motel, lodging, resort, hospitality, inn, accommodation' },
+  { code: '722310', title: 'Food Service Contractors', sector: '72 - Accommodation and Food Services', keywords: 'catering, cafeteria, institutional dining, corporate dining, food contractor, contract feeding' },
+  { code: '722330', title: 'Mobile Food Services', sector: '72 - Accommodation and Food Services', keywords: 'food truck, mobile canteen, street vendor, mobile food cart' },
+  { code: '722511', title: 'Full-Service Restaurants', sector: '72 - Accommodation and Food Services', keywords: 'restaurant, dine-in, fine dining, casual dining, food service, eatery, sit-down dining, culinary arts' },
+  { code: '722513', title: 'Limited-Service Restaurants', sector: '72 - Accommodation and Food Services', keywords: 'fast food, quick service, fast casual, takeout, drive-thru, cafe, counter service' },
+  { code: '811111', title: 'General Automotive Repair', sector: '81 - Other Services', keywords: 'auto repair, mechanic shop, car service, auto garage, vehicle repair' },
+  { code: '811112', title: 'Automotive Body, Paint, and Interior Repair', sector: '81 - Other Services', keywords: 'collision repair, auto body, paint restoration' },
+  { code: '811212', title: 'Electronics Repair and Maintenance', sector: '81 - Other Services', keywords: 'consumer electronics, appliance repair, device servicing' },
+  { code: '811411', title: 'Home and Garden Equipment Repair and Maintenance', sector: '81 - Other Services', keywords: 'lawn mowers, power tools, garden machinery' },
+  { code: '921110', title: 'Executive Offices', sector: '92 - Public Administration', keywords: 'government, mayoral office, county executive, governor office, public admin' },
+  { code: '921150', title: 'Administration of Economic Programs', sector: '92 - Public Administration', keywords: 'economic policy, budgeting, program oversight' },
+  { code: '922160', title: 'Regulation and Administration of Transportation Programs', sector: '92 - Public Administration', keywords: 'transport regulation, safety compliance' },
+  { code: '927110', title: 'Police Protection', sector: '92 - Public Administration', keywords: 'law enforcement, community policing, public safety' },
+];
+
+// ── SOC Lookup (merged, deduplicated by code) ──
+export const SOC_LOOKUP: SocEntry[] = [
+  { code: '11-1021', title: 'General and Operations Managers', majorGroup: '11', broadCategory: 'Management Occupations' },
+  { code: '11-3021', title: 'Computer and Information Systems Managers', majorGroup: '11', broadCategory: 'Management Occupations' },
+  { code: '11-3031', title: 'Financial Managers', majorGroup: '11', broadCategory: 'Management Occupations' },
+  { code: '11-3051', title: 'Industrial Production Managers', majorGroup: '11', broadCategory: 'Management Occupations' },
+  { code: '11-3071', title: 'Transportation, Storage, and Distribution Managers', majorGroup: '11', broadCategory: 'Management Occupations' },
+  { code: '11-3121', title: 'Human Resources Managers', majorGroup: '11', broadCategory: 'Management Occupations' },
+  { code: '11-9021', title: 'Construction Managers', majorGroup: '11', broadCategory: 'Management Occupations' },
+  { code: '11-9051', title: 'Food Service Managers', majorGroup: '11', broadCategory: 'Management Occupations' },
+  { code: '11-9111', title: 'Medical and Health Services Managers', majorGroup: '11', broadCategory: 'Management Occupations' },
+  { code: '13-1020', title: 'Buyers and Purchasing Agents', majorGroup: '13', broadCategory: 'Business and Financial Operations' },
+  { code: '13-1028', title: 'Buyers and Purchasing Agents', majorGroup: '13', broadCategory: 'Business and Financial Operations' },
+  { code: '13-1071', title: 'Human Resources Specialists', majorGroup: '13', broadCategory: 'Business and Financial Operations' },
+  { code: '13-1082', title: 'Project Management Specialists', majorGroup: '13', broadCategory: 'Business and Financial Operations' },
+  { code: '13-1111', title: 'Management Analysts', majorGroup: '13', broadCategory: 'Business and Financial Operations' },
+  { code: '13-2011', title: 'Accountants and Auditors', majorGroup: '13', broadCategory: 'Business and Financial Operations' },
+  { code: '13-2053', title: 'Insurance Underwriters', majorGroup: '13', broadCategory: 'Business and Financial Operations' },
+  { code: '15-1211', title: 'Computer Systems Analysts', majorGroup: '15', broadCategory: 'Computer and Mathematical Occupations' },
+  { code: '15-1212', title: 'Information Security Analysts', majorGroup: '15', broadCategory: 'Computer and Mathematical Occupations' },
+  { code: '15-1232', title: 'Computer User Support Specialists', majorGroup: '15', broadCategory: 'Computer and Mathematical Occupations' },
+  { code: '15-1244', title: 'Network and Computer Systems Administrators', majorGroup: '15', broadCategory: 'Computer and Mathematical Occupations' },
+  { code: '15-1252', title: 'Software Developers', majorGroup: '15', broadCategory: 'Computer and Mathematical Occupations' },
+  { code: '15-1253', title: 'Software Quality Assurance Analysts and Testers', majorGroup: '15', broadCategory: 'Computer and Mathematical Occupations' },
+  { code: '15-1256', title: 'Software Developers and Programmers', majorGroup: '15', broadCategory: 'Computer and Mathematical Occupations' },
+  { code: '15-2031', title: 'Operations Research Analysts', majorGroup: '15', broadCategory: 'Computer and Mathematical Occupations' },
+  { code: '15-2051', title: 'Data Scientists', majorGroup: '15', broadCategory: 'Computer and Mathematical Occupations' },
+  { code: '17-1021', title: 'Architects, except Naval', majorGroup: '17', broadCategory: 'Architecture and Engineering' },
+  { code: '17-2051', title: 'Civil Engineers', majorGroup: '17', broadCategory: 'Architecture and Engineering' },
+  { code: '17-2071', title: 'Electrical Engineers', majorGroup: '17', broadCategory: 'Architecture and Engineering' },
+  { code: '17-2112', title: 'Industrial Engineers', majorGroup: '17', broadCategory: 'Architecture and Engineering' },
+  { code: '17-2141', title: 'Mechanical Engineers', majorGroup: '17', broadCategory: 'Architecture and Engineering' },
+  { code: '19-1029', title: 'Occupational Health and Safety Specialists', majorGroup: '19', broadCategory: 'Life, Physical, and Social Science' },
+  { code: '19-2031', title: 'Conservation Scientists', majorGroup: '19', broadCategory: 'Life, Physical, and Social Science' },
+  { code: '19-4071', title: 'Atmospheric Scientists', majorGroup: '19', broadCategory: 'Life, Physical, and Social Science' },
+  { code: '21-1021', title: 'Child, Family, and School Social Workers', majorGroup: '21', broadCategory: 'Community and Social Service' },
+  { code: '21-1093', title: 'Social and Human Service Assistants', majorGroup: '21', broadCategory: 'Community and Social Service' },
+  { code: '21-1094', title: 'Community Health Workers', majorGroup: '21', broadCategory: 'Community and Social Service' },
+  { code: '21-2011', title: 'Clergy', majorGroup: '21', broadCategory: 'Community and Social Service' },
+  { code: '23-1011', title: 'Lawyers', majorGroup: '23', broadCategory: 'Legal Occupations' },
+  { code: '23-2011', title: 'Paralegals and Legal Assistants', majorGroup: '23', broadCategory: 'Legal Occupations' },
+  { code: '23-5011', title: 'Court Reporters', majorGroup: '23', broadCategory: 'Legal Occupations' },
+  { code: '25-1011', title: 'Postsecondary Teachers', majorGroup: '25', broadCategory: 'Educational Instruction and Library' },
+  { code: '25-1099', title: 'Postsecondary Teachers', majorGroup: '25', broadCategory: 'Educational Instruction and Library' },
+  { code: '25-2011', title: 'Elementary School Teachers', majorGroup: '25', broadCategory: 'Educational Instruction and Library' },
+  { code: '25-2021', title: 'Elementary School Teachers', majorGroup: '25', broadCategory: 'Educational Instruction and Library' },
+  { code: '25-3021', title: 'Special Education Teachers', majorGroup: '25', broadCategory: 'Educational Instruction and Library' },
+  { code: '27-1024', title: 'Graphic Designers', majorGroup: '27', broadCategory: 'Arts, Design, Entertainment, Sports, and Media' },
+  { code: '27-2021', title: 'Musicians and Singers', majorGroup: '27', broadCategory: 'Arts, Design, Entertainment, Sports, and Media' },
+  { code: '27-3041', title: 'Writers and Authors', majorGroup: '27', broadCategory: 'Arts, Design, Entertainment, Sports, and Media' },
+  { code: '29-1051', title: 'Pharmacists', majorGroup: '29', broadCategory: 'Healthcare Practitioners and Technical' },
+  { code: '29-1141', title: 'Registered Nurses', majorGroup: '29', broadCategory: 'Healthcare Practitioners and Technical' },
+  { code: '29-1171', title: 'Nurse Practitioners', majorGroup: '29', broadCategory: 'Healthcare Practitioners and Technical' },
+  { code: '29-1215', title: 'Family Medicine Physicians', majorGroup: '29', broadCategory: 'Healthcare Practitioners and Technical' },
+  { code: '29-2061', title: 'Licensed Practical and Licensed Vocational Nurses', majorGroup: '29', broadCategory: 'Healthcare Practitioners and Technical' },
+  { code: '31-1014', title: 'Occupational Therapy Assistants', majorGroup: '31', broadCategory: 'Healthcare Support' },
+  { code: '31-1120', title: 'Home Health and Personal Care Aides', majorGroup: '31', broadCategory: 'Healthcare Support' },
+  { code: '31-1131', title: 'Nursing Assistants', majorGroup: '31', broadCategory: 'Healthcare Support' },
+  { code: '31-2021', title: 'Physical Therapist Aides', majorGroup: '31', broadCategory: 'Healthcare Support' },
+  { code: '31-9092', title: 'Medical Assistants', majorGroup: '31', broadCategory: 'Healthcare Support' },
+  { code: '33-1021', title: 'Police Officers', majorGroup: '33', broadCategory: 'Protective Service' },
+  { code: '33-3052', title: 'Fire Inspectors', majorGroup: '33', broadCategory: 'Protective Service' },
+  { code: '33-9032', title: 'Security Guards', majorGroup: '33', broadCategory: 'Protective Service' },
+  { code: '35-1011', title: 'Chefs and Head Cooks', majorGroup: '35', broadCategory: 'Food Preparation and Serving Related' },
+  { code: '35-1012', title: 'First-Line Supervisors of Food Preparation and Serving Workers', majorGroup: '35', broadCategory: 'Food Preparation and Serving Related' },
+  { code: '35-2014', title: 'Cooks, Restaurant', majorGroup: '35', broadCategory: 'Food Preparation and Serving Related' },
+  { code: '35-2021', title: 'Food Preparation Workers', majorGroup: '35', broadCategory: 'Food Preparation and Serving Related' },
+  { code: '35-3011', title: 'Cooks, Fast Food', majorGroup: '35', broadCategory: 'Food Preparation and Serving Related' },
+  { code: '35-3023', title: 'Fast Food and Counter Workers', majorGroup: '35', broadCategory: 'Food Preparation and Serving Related' },
+  { code: '35-3031', title: 'Waiters and Waitresses', majorGroup: '35', broadCategory: 'Food Preparation and Serving Related' },
+  { code: '37-1011', title: 'Janitors and Cleaners', majorGroup: '37', broadCategory: 'Building and Grounds Cleaning and Maintenance' },
+  { code: '37-2011', title: 'Pest Control Workers', majorGroup: '37', broadCategory: 'Building and Grounds Cleaning and Maintenance' },
+  { code: '37-3011', title: 'Landscaping and Groundskeeping Workers', majorGroup: '37', broadCategory: 'Building and Grounds Cleaning and Maintenance' },
+  { code: '39-3091', title: 'Entertainment Attendants and Related Workers', majorGroup: '39', broadCategory: 'Personal Care and Service' },
+  { code: '39-4021', title: 'Flight Attendants', majorGroup: '39', broadCategory: 'Personal Care and Service' },
+  { code: '39-5012', title: 'Personal Care Aides', majorGroup: '39', broadCategory: 'Personal Care and Service' },
+  { code: '41-1011', title: 'Sales Representatives, Wholesale and Manufacturing', majorGroup: '41', broadCategory: 'Sales and Related' },
+  { code: '41-2011', title: 'Cashiers', majorGroup: '41', broadCategory: 'Sales and Related' },
+  { code: '41-2031', title: 'Retail Salespersons', majorGroup: '41', broadCategory: 'Sales and Related' },
+  { code: '41-3021', title: 'Sales Representatives, Services', majorGroup: '41', broadCategory: 'Sales and Related' },
+  { code: '41-4012', title: 'Sales Representatives, Wholesale and Manufacturing', majorGroup: '41', broadCategory: 'Sales and Related' },
+  { code: '41-9041', title: 'Sales Engineers', majorGroup: '41', broadCategory: 'Sales and Related' },
+  { code: '43-3011', title: 'Bookkeeping, Accounting, and Auditing Clerks', majorGroup: '43', broadCategory: 'Office and Administrative Support' },
+  { code: '43-4051', title: 'Customer Service Representatives', majorGroup: '43', broadCategory: 'Office and Administrative Support' },
+  { code: '43-5071', title: 'Shipping, Receiving, and Inventory Clerks', majorGroup: '43', broadCategory: 'Office and Administrative Support' },
+  { code: '43-6011', title: 'Executive Secretaries and Administrative Assistants', majorGroup: '43', broadCategory: 'Office and Administrative Support' },
+  { code: '43-6014', title: 'Secretaries and Administrative Assistants', majorGroup: '43', broadCategory: 'Office and Administrative Support' },
+  { code: '43-9021', title: 'Data Entry Keyers', majorGroup: '43', broadCategory: 'Office and Administrative Support' },
+  { code: '45-2011', title: 'Farmers, Ranchers, and Other Agricultural Managers', majorGroup: '45', broadCategory: 'Farming, Fishing, and Forestry' },
+  { code: '45-2092', title: 'Farm Workers, Agricultural', majorGroup: '45', broadCategory: 'Farming, Fishing, and Forestry' },
+  { code: '45-3011', title: 'Fishers and Fishermen', majorGroup: '45', broadCategory: 'Farming, Fishing, and Forestry' },
+  { code: '47-1011', title: 'Construction Managers', majorGroup: '47', broadCategory: 'Construction and Extraction' },
+  { code: '47-2061', title: 'Construction Laborers', majorGroup: '47', broadCategory: 'Construction and Extraction' },
+  { code: '47-2111', title: 'Electricians', majorGroup: '47', broadCategory: 'Construction and Extraction' },
+  { code: '47-2152', title: 'Plumbers, Pipefitters, and Steamfitters', majorGroup: '47', broadCategory: 'Construction and Extraction' },
+  { code: '47-2153', title: 'Pipelayers', majorGroup: '47', broadCategory: 'Construction and Extraction' },
+  { code: '49-1011', title: 'First-Line Supervisors of Mechanics, Installers, and Repairers', majorGroup: '49', broadCategory: 'Installation, Maintenance, and Repair' },
+  { code: '49-2097', title: 'Maintenance and Repair Workers, General', majorGroup: '49', broadCategory: 'Installation, Maintenance, and Repair' },
+  { code: '49-3021', title: 'Automotive Service Technicians and Mechanics', majorGroup: '49', broadCategory: 'Installation, Maintenance, and Repair' },
+  { code: '49-3023', title: 'Automotive Service Technicians and Mechanics', majorGroup: '49', broadCategory: 'Installation, Maintenance, and Repair' },
+  { code: '49-9021', title: 'Heating, Air Conditioning, and Refrigeration Mechanics', majorGroup: '49', broadCategory: 'Installation, Maintenance, and Repair' },
+  { code: '49-9071', title: 'Maintenance and Repair Workers, General', majorGroup: '49', broadCategory: 'Installation, Maintenance, and Repair' },
+  { code: '51-1011', title: 'First-Line Supervisors of Production and Operating Workers', majorGroup: '51', broadCategory: 'Production Occupations' },
+  { code: '51-2028', title: 'Team Assemblers', majorGroup: '51', broadCategory: 'Production Occupations' },
+  { code: '51-2090', title: 'Miscellaneous Assemblers and Fabricators', majorGroup: '51', broadCategory: 'Production Occupations' },
+  { code: '51-4121', title: 'Welders, Cutters, Solderers, and Brazers', majorGroup: '51', broadCategory: 'Production Occupations' },
+  { code: '51-8099', title: 'Production Workers, All Other', majorGroup: '51', broadCategory: 'Production Occupations' },
+  { code: '53-1021', title: 'Aircraft Pilots and Flight Engineers', majorGroup: '53', broadCategory: 'Transportation and Material Moving' },
+  { code: '53-3031', title: 'Heavy and Tractor-Trailer Truck Drivers', majorGroup: '53', broadCategory: 'Transportation and Material Moving' },
+  { code: '53-3032', title: 'Heavy and Tractor-Trailer Truck Drivers', majorGroup: '53', broadCategory: 'Transportation and Material Moving' },
+  { code: '53-3033', title: 'Light Truck Drivers', majorGroup: '53', broadCategory: 'Transportation and Material Moving' },
+  { code: '53-7051', title: 'Industrial Truck and Tractor Operators', majorGroup: '53', broadCategory: 'Transportation and Material Moving' },
+  { code: '53-7062', title: 'Laborers and Freight, Stock, and Material Movers, Hand', majorGroup: '53', broadCategory: 'Transportation and Material Moving' },
+  { code: '53-7065', title: 'Stockers and Order Fillers', majorGroup: '53', broadCategory: 'Transportation and Material Moving' },
+];
+
+// ── Search functions ──
+
+export function searchNaics(query: string): NaicsEntry[] {
+  const q = query.toLowerCase().trim();
+  if (!q) return [];
+  return NAICS_LOOKUP.filter(e =>
+    e.code.includes(q) ||
+    e.title.toLowerCase().includes(q) ||
+    e.sector.toLowerCase().includes(q) ||
+    e.keywords.toLowerCase().includes(q)
+  ).slice(0, 12);
+}
+
+export function searchSoc(query: string): SocEntry[] {
+  const q = query.toLowerCase().trim();
+  if (!q) return [];
+  return SOC_LOOKUP.filter(e =>
+    e.code.includes(q) ||
+    e.title.toLowerCase().includes(q) ||
+    e.broadCategory.toLowerCase().includes(q)
+  ).slice(0, 12);
+}
