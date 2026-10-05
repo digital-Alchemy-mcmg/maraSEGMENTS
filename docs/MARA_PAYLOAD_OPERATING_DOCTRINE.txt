@@ -1,0 +1,341 @@
+<PARSED TEXT FOR PAGE: 1 / 9>
+MARA Payload Operating Doctrine | Active post-payload operating contract
+MARA PAYLOAD OPERATING DOCTRINE
+Post-Payload Handling, Validation, Repair, Layout Allocation, and Renderer Handoff
+Operating doctrine for any operator, model, agent, renderer, or downstream system that receives a
+MARA payload.
+Version: 1.0 | Doctrine status: ACTIVE OPERATING CONTRACT | Scope: MARA post-projection
+payload lane
+1. GOAL
+The goal is to convert a MARA projection payload into a recipient-facing artifact without
+damaging the evidence, changing the candidate, inventing fit, or letting a visual template
+overrule the measured payload. The payload is a machine-readable construction envelope. It
+carries the target demand, authorized candidate evidence, binding and polarity information,
+story/acumen hierarchy, render order, content payload, and atom trace needed to build an ATS- and
+recruiter-legible surface.
+● Preserve truth and provenance before presentation.
+● Preserve target-relative relevance without rewriting the candidate's underlying history.
+● Let capability acumen and evidence strength lead; chronology is a supporting lens, not the
+primary organizing axis.
+● Construct the strongest recipient-facing artifact that the authorized evidence supports—no more
+and no less.
+● Treat NON_BIND, conflict, missing evidence, and uncertainty as legitimate states, not defects to
+be hidden.
+2. THE PAYLOAD IS NOT THE RESUME
+A MARA payload is not a finished resume, cover letter, executive brief, or visual layout. It is the
+structured handoff between Spatial DNA reasoning and the surface renderer. A downstream
+operator may change presentation geometry, section labels, grouping, density, or surface type, but
+may not silently change the meaning, authority, lineage, or target relationship of the evidence.
+Layer Owns Does Not Own
+Demand / Receptor Layer What the target asks for Candidate truth
+Spatial Projection Layer
+Binding, polarity, relevance,
+coordinates, evidence state
+Visual formatting
+Payload / Story Layer Authorized claims, hierarchy, New evidence
+<PARSED TEXT FOR PAGE: 2 / 9>
+MARA Payload Operating Doctrine | Active post-payload operating contract
+render order, atom traces
+Surface / Renderer Layer
+Typography, geometry, grouping,
+page allocation, visual hierarchy
+Changing claim meaning or
+evidence authority
+3. REQUIRED PAYLOAD CONCEPTS
+A complete payload should provide enough information to answer all of the following before
+rendering:
+● What target is being answered?
+● What demand receptors or evaluative asks were extracted from that target?
+● Which candidate atoms bind to which receptors?
+● What is each atom's evidence state and binding class?
+● What is each atom's projection polarity or equivalent relevance disposition?
+● Which claims are authorized for outward use?
+● What content hierarchy or render order is intended?
+● What source atoms authorize every factual outward claim?
+● What conflicts, gates, blocks, or unresolved conditions must remain visible or must suppress
+projection?
+4. ACUMEN AND STORY HIERARCHY
+The post-payload hierarchy is capability-first. The artifact should read as a target-specific evidence
+argument, not as a chronological dump. Use the following order unless the payload itself explicitly
+supplies a different valid order:
+1. Target demand / receptor: the problem, requirement, or evaluative need being answered.
+2. Capability thesis: the shortest evidence-grounded statement of why the candidate answers that
+demand.
+3. High-polarity proof: strongest directly bound evidence, especially scale, ownership, outcomes,
+systems, or demonstrated execution.
+4. Cross-domain bridge: verified relationships that reveal transferable or transdisciplinary acumen.
+5. Supporting experience: employers, roles, responsibilities, and accomplishments that substantiate
+the proof.
+<PARSED TEXT FOR PAGE: 3 / 9>
+MARA Payload Operating Doctrine | Active post-payload operating contract
+6. Chronology / tenure rail: dates, sequence, locations, and tenure needed for recipient
+comprehension and ATS parsing.
+7. Provenance / strategy lock: source trace, evidence authority, gallery gates, conflict flags, or other
+anti-drift controls.
+5. LANGUAGE POSTURE
+MARA language is evidence-led, receptor-aware, bounded, and operational. It should sound
+competent because the evidence is competent—not because adjectives were added.
+● Prefer observable verbs: led, directed, managed, built, maintained, reduced, increased, trained,
+implemented, audited, reconciled, designed, delivered.
+● Use exact numbers when authorized. Do not round upward, embellish, or create implied scale.
+● State ownership only when the evidence supports ownership.
+● Do not convert transferable evidence into direct experience.
+● Do not convert a candidate-reported metric into verified fact.
+● Do not hide or resolve CONFLICTED evidence by choosing the more convenient version.
+● Do not use generic personality praise when specific operational evidence is available.
+● Do not let ATS keyword matching force persona drift or fabrication.
+● Keep the artifact recruiter-legible even when the underlying reasoning is spatial, topological, or
+graph-based.
+6. EVIDENCE AND BINDING POSTURE
+State / Class Meaning Allowed Use Forbidden Move
+VERIFIED / SUPPORTED
+Evidence has acceptable
+authority
+Firm factual language
+within the proposition
+Adding unsupported
+scope
+CANDIDATE-REPORTED
+Claim originates from
+candidate reporting
+Use when material and
+not contradicted; retain
+authority state
+Presenting as
+independently verified
+CONFLICTED
+Evidence contains
+unresolved disagreement
+Use uncontested
+capability; preserve
+factual boundary
+Silently choosing one
+conflicting fact
+DIRECT_BIND
+Evidence directly
+answers receptor
+Primary thesis/proof
+Diluting it beneath
+weaker evidence
+TRANSFERABLE_BIND Evidence demonstrates Supporting/bridge Calling it direct domain
+<PARSED TEXT FOR PAGE: 4 / 9>
+MARA Payload Operating Doctrine | Active post-payload operating contract
+adjacent or portable
+capability
+evidence experience
+NON_BIND
+Evidence does not
+legitimately answer
+receptor
+Usually suppress from
+target argument
+Forcing it into fit
+GATE / BLOCK
+Projection is
+conditionally prohibited
+Honor block until gate is
+satisfied
+Rendering through the
+block
+7. MALFORMED PAYLOAD DOCTRINE
+Rule: malformed does not mean 'permission to improvise.' The operator must separate
+structural defects that can be repaired deterministically from semantic defects that require
+upstream authority.
+7.1 Repairable Without Escalation
+Repair only when the intended value is mechanically derivable from other payload fields and the
+repair does not alter meaning.
+● Missing render-order numbers when container sequence is otherwise explicit and unambiguous.
+● Inconsistent capitalization, spacing, punctuation, or harmless label formatting.
+● Duplicate containers or duplicate atoms that are exact duplicates and can be deduplicated
+without losing distinct provenance.
+● A missing display label when the underlying canonical ID and meaning are present.
+● An empty optional presentation field whose absence does not change evidence selection,
+binding, hierarchy, or authority.
+● A renderer-specific field that can be generated from explicit payload values, such as a human￾readable section label from a known container type.
+7.2 Quarantine and Flag
+Stop semantic construction at the affected boundary when any of the following are missing,
+contradictory, or impossible to infer safely:
+● Target identity or receptor definition.
+● Atom identity or proposition text.
+● Evidence state when claim force depends on it.
+● Binding class where DIRECT vs TRANSFERABLE vs NON_BIND changes the argument.
+● Bound receptor mapping for a claim that is being used to answer a target requirement.
+<PARSED TEXT FOR PAGE: 5 / 9>
+MARA Payload Operating Doctrine | Active post-payload operating contract
+● Atom trace for an outward factual claim.
+● Conflicting versions of a date, title, metric, company, credential, or role.
+● A required gate, suppression rule, or portfolio/gallery verification state.
+● Hierarchy instructions that contradict one another and cannot be resolved by an explicit
+precedence rule.
+● Payload content that asks the renderer to state something not authorized by any supplied atom.
+7.3 Malformed Payload Response Procedure
+1. Parse and inventory the payload exactly as received.
+2. Validate required identifiers, receptors, atoms, evidence states, bindings, traces, container order,
+and gate flags.
+3. Classify each defect as PRESENTATION-REPAIRABLE or SEMANTIC-BLOCKING.
+4. Apply only presentation-safe repairs and record them in a repair receipt.
+5. Quarantine semantic-blocking elements; do not fabricate substitutes.
+6. Continue rendering unaffected sections only if they remain coherent and lineage-complete on
+their own.
+7. Emit a defect report identifying field, impact, affected claims/containers, and required upstream
+correction.
+8. Never claim the payload is healthy until the repaired payload passes a second validation.
+8. FLEXIBILITY OPTIONS
+The renderer has broad presentation flexibility and narrow semantic flexibility. The safest mental
+model is: change the surface freely; change the evidence meaning only when the payload explicitly
+authorizes it.
+Flexible Conditionally Flexible Locked
+Typography, spacing, page count Section naming Evidence propositions
+Single-page vs multi-page surface Grouping multiple claims Atom IDs / lineage
+Column count and modular
+geometry
+Claim wording for clarity Evidence state
+Resume / brief / dossier topology
+Ordering within same evidence
+tier
+Binding class unless upstream
+recalculates
+Visual emphasis and density Combining corroborating atoms Conflict state
+<PARSED TEXT FOR PAGE: 6 / 9>
+MARA Payload Operating Doctrine | Active post-payload operating contract
+Headers, rails, cards, bento, memo
+structure
+Chronology placement Target receptor mapping
+Machine-readable JSON/Sheet vs
+human-readable surface
+Skill/competency labels derived
+from proof
+Gate / block conditions
+9. CANONICAL SIX-ZONE SURFACE
+When no more specific valid surface is supplied, use the six-zone MARA hierarchy. Zones are
+functional, not mandatory rectangular boxes.
+ZONE 1 — Identity & Architectural Header: Identity, professional persona, location, verification
+anchor.
+ZONE 2 — Executive Narrative Thesis: Target-specific, evidence-grounded alignment thesis.
+ZONE 3 — High-Polarity Proof: Strongest directly bound quantitative and qualitative evidence.
+ZONE 4 — Cross-Domain Bridge: Verified relational edges and transferable acumen.
+ZONE 5 — Temporal Context & Tenure Rail: Employment dates, employers, titles, locations,
+sequence.
+ZONE 6 — Provenance Footprint & Strategy Lock: Atom traces, evidence authority, gates, conflict
+boundaries, verification footprint.
+10. DYNAMIC LAYOUT SELECTION
+Target Archetype Dominant Content Useful Topology Primary Reading Effect
+Executive Operations Thesis + scale + outcomes
+Dominant primary
+narrative with evidence
+rail
+Operational authority,
+P&L scale, workforce
+execution
+Systems / Software Proof + relational bridges
+Modular/bento evidence
+structure
+Technical systems,
+architecture,
+deterministic execution
+Institutional / Advisory
+Thesis + bridges +
+provenance
+Executive brief /
+memorandum
+Structural synthesis,
+compliance, chain of
+custody
+Conventional ATS
+Resume
+Direct binds +
+experience +
+competencies
+Single or multi-column
+ATS-safe resume
+Immediate recruiter
+comprehension and
+parsing
+<PARSED TEXT FOR PAGE: 7 / 9>
+MARA Payload Operating Doctrine | Active post-payload operating contract
+11. OVERFLOW AND NON-COMPRESSION
+Do not force the payload to fit the page. If required evidence exceeds the current surface, promote
+the surface: add a page, change topology, split evidence modules, or use an extended dossier. Do not
+truncate a material claim, weaken a metric, remove a required atom, or compress text until
+meaning changes merely to preserve a visual template.
+12. OPERATOR EXECUTION PROCEDURE
+1. Receive payload. Preserve an untouched copy.
+2. Identify payload version, target, job/receptor IDs, and declared output type.
+3. Validate schema and required semantic fields.
+4. Build a receptor-to-atom map.
+5. Separate DIRECT_BIND, TRANSFERABLE_BIND, NON_BIND, CONFLICTED, and blocked/gated
+evidence.
+6. Confirm every outward factual claim has a source atom trace.
+7. Establish the acumen/story hierarchy before choosing layout geometry.
+8. Select the surface topology that best expresses the measured payload.
+9. Write or normalize outward language without exceeding evidence authority.
+10. Place chronology as supporting context unless the target explicitly requires chronology-first
+presentation.
+11. Apply overflow rules; expand surface rather than compress evidence.
+12. Run a lineage audit: every number, title, claim, and accomplishment must resolve to supplied
+evidence.
+13. Run a receptor audit: every emphasized claim must answer a real target demand or legitimate
+transferable bridge.
+14. Run a conflict/gate audit.
+15. Render the artifact and visually inspect it.
+16. Emit the artifact plus a compact receipt stating payload version, repairs made, blocked elements,
+output topology, and validation result.
+<PARSED TEXT FOR PAGE: 8 / 9>
+MARA Payload Operating Doctrine | Active post-payload operating contract
+13. HARD PROHIBITIONS
+● Do not hallucinate candidate experience, credentials, scope, metrics, dates, titles, employers,
+tools, or outcomes.
+● Do not promote transferable evidence into direct domain experience.
+● Do not use chronology to suppress stronger durable capability simply because it is older.
+● Do not use a target's keywords as permission to rewrite the candidate.
+● Do not silently normalize conflicts.
+● Do not drop provenance merely because the outward document hides technical identifiers from
+the visible surface.
+● Do not force-fit evidence into a template.
+● Do not treat NON_BIND as a failure that must be repaired into a match.
+● Do not let a renderer become a reasoning engine that changes the upstream projection.
+● Do not report successful handling if the payload contains unresolved semantic-blocking defects.
+14. MINIMUM VALIDATION RECEIPT
+Every completed payload handling pass should be able to produce this receipt:
+Receipt Field Required Entry
+Payload ID / version Observed identifier
+Target / receptor Observed target
+Schema status
+PASS / PASS WITH PRESENTATION REPAIRS /
+BLOCKED
+Direct binds Count and IDs
+Transferable binds Count and IDs
+Non-binds Count and IDs
+Conflicts / gates Count and IDs
+Rendered containers Ordered list
+Repairs made Mechanical repairs only
+Suppressed elements With reason
+Lineage audit PASS / FAIL
+<PARSED TEXT FOR PAGE: 9 / 9>
+MARA Payload Operating Doctrine | Active post-payload operating contract
+Receptor audit PASS / FAIL
+Surface topology Resume / brief / dossier / modular / other
+15. QUICK FIELD GUIDE FOR THE 'FOUND IT ON THE
+GROUND' OPERATOR
+If you know nothing else, do this:
+1. Find the target and its receptors.
+2. Find the candidate atoms and their binding classes.
+3. Use DIRECT_BIND evidence for the main argument.
+4. Use TRANSFERABLE_BIND evidence only as a bridge or support.
+5. Keep NON_BIND out of the fit argument.
+6. Respect evidence state and conflicts.
+7. Do not write a factual claim without an atom trace.
+8. Put capability proof before chronology.
+9. Choose the layout after you know how much evidence must survive.
+10. If the payload is structurally messy, repair only what is mechanically obvious.
+11. If meaning, lineage, evidence authority, or binding is missing, stop at that boundary and flag it.
+12. Never invent the missing truth.
+16. OPERATING DOCTRINE DECLARATION
+This document is the operating doctrine for post-payload MARA handling. When a MARA
+payload is received, the operator shall preserve its semantic authority, validate its lineage, repair
+only presentation-safe defects, quarantine semantic defects, preserve capability-first hierarchy,
+select a content-responsive surface, and produce an outward artifact whose every material claim
+can be traced back to authorized evidence.
+Authority references used to establish this doctrine: mara-corridor repository calibration workbook;
+MARA_JOB_002_DYNAMIC_LAYOUT_PAYLOAD; MARA_JOB_002 projection payload; MARA Dynamic
+Layout Hierarchy & Correspondence Architecture (PIN-18 through PIN-22 Surface Transducer).
