@@ -32,3 +32,24 @@ Archive SHA-256:
 ## Status
 
 This branch is the frozen curated-taxonomy baseline. Do not merge automatically. Jules can use it as the authoritative handoff point for the next work pass.
+
+
+## A1-A3 freeze
+
+Status: **DONE / FROZEN**
+
+The serialized Amazon Quick Parachute snapshot has now been committed into this branch under `scout-disk-compiler/`.
+
+Source-import head before this receipt update:
+
+`2ae41da73f67ee95874409b59751ea06cbbc3caf`
+
+Scope frozen here:
+- Disk Builder
+- Cartridge Compiler
+- Pipeline Flow / deterministic decomposition workbench
+- Curated NAICS/SOC lookup layer
+- Live Preview / Rule Test Harness / Code Inspector
+- Parachute support files captured by the exported snapshot
+
+No merge to `main` was performed.
